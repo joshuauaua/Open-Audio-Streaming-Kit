@@ -1,7 +1,7 @@
-using Hyper_Radio_API.Data;
-using Hyper_Radio_API.Models;
+using HLS_Tool.Data;
+using HLS_Tool.Models;
 using Microsoft.EntityFrameworkCore;
-namespace Hyper_Radio_API.Repositories.TrackRepositories
+namespace HLS_Tool.Repositories.TrackRepositories
 {
     public class TrackRepository : ITrackRepository
     {

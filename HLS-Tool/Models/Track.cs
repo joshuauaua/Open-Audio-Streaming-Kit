@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Hyper_Radio_API.Models
+namespace HLS_Tool.Models
 {
     public class Track
     {

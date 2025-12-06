@@ -1,6 +1,6 @@
-using Hyper_Radio_API.Models;
+using HLS_Tool.Models;
 
-namespace Hyper_Radio_API.Repositories.TrackRepositories
+namespace HLS_Tool.Repositories.TrackRepositories
 {
     public interface ITrackRepository
     {

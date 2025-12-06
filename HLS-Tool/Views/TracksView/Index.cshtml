@@ -1,0 +1,31 @@
+@model IEnumerable<HLS_Tool.DTOs.TrackDTOs.TrackDTO>
+
+@{
+    ViewData["Title"] = "Tracks";
+}
+
+<h1>Tracks</h1>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">Upload New Track</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Track URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var track in Model)
+    {
+        <tr>
+            <td>@track.Title</td>
+            <td>
+                <a href="@track.TrackURL" target="_blank">@track.TrackURL</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

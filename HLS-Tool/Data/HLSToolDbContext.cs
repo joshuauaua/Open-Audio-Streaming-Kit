@@ -1,7 +1,7 @@
-using Hyper_Radio_API.Models;
+using HLS_Tool.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Hyper_Radio_API.Data
+namespace HLS_Tool.Data
 {
     public class HLSToolDbContext : DbContext
 

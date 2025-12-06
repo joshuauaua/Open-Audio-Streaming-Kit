@@ -1,7 +1,7 @@
-using Hyper_Radio_API.Data;
-using Hyper_Radio_API.Repositories.TrackRepositories;
-using Hyper_Radio_API.Services.TrackServices;
-using Hyper_Radio_API.Services.UploadServices;
+using HLS_Tool.Data;
+using HLS_Tool.Repositories.TrackRepositories;
+using HLS_Tool.Services.TrackServices;
+using HLS_Tool.Services.UploadServices;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hyper_Radio_API
@@ -62,7 +62,7 @@ namespace Hyper_Radio_API
             // 👉 Default route = Home/Index
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=TracksView}/{action=Index}/{id?}");
 
             // Optional if you also want API endpoints using attribute routing
             // app.MapControllers();

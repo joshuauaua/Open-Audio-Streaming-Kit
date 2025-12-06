@@ -1,8 +1,10 @@
-using Hyper_Radio_API.DTOs.TrackDTOs;
-using Hyper_Radio_API.Models;
-using Hyper_Radio_API.Repositories.TrackRepositories;
+using HLS_Tool.DTOs.TrackDTOs;
+using HLS_Tool.Models;
+using HLS_Tool.Repositories.TrackRepositories;
+using HLS_Tool.Models;
+using HLS_Tool.Repositories.TrackRepositories;
 
-namespace Hyper_Radio_API.Services.TrackServices
+namespace HLS_Tool.Services.TrackServices
 {
     public class TrackService : ITrackService
     {

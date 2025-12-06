@@ -1,7 +1,7 @@
 using Azure.Storage.Blobs;
 using Microsoft.Extensions.Options;
 
-namespace Hyper_Radio_API.Services.UploadServices;
+namespace HLS_Tool.Services.UploadServices;
 
 public class BlobService
 {
