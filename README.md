@@ -51,13 +51,13 @@ Local conversion happens first (CPU heavy), then results are uploaded.
 git clone https://github.com/yourname/HLS-Tool.git
 cd HLS-Tool
 dotnet restore
-
-
+```
 
 Update configuration
 
 Edit appsettings.json:
 
+```
 "AzureBlob": {
   "ConnectionString": "...",
   "ContainerName": "..."
@@ -66,16 +66,21 @@ Edit appsettings.json:
 "FFmpegSettings": {
   "LocalWorkDirectory": "/path/to/processing"
 }
+```
 
 
 Run project:
 
+```
 dotnet run
+```
 
 Upload an audio file → Converts → Uploads → Returns .m3u8 streaming URL.
 
 
 🧩 Project Architecture
+
+```
 
 HLS-Tool/
  ├── Services/       // Conversion, upload & processing logic
@@ -83,6 +88,7 @@ HLS-Tool/
  ├── Views/          // Simple demo UI for interaction
  ├── Data/           // EF Core + SQLite context
  └── wwwroot/        // Static files
+```
 
 
 🤝 Contribution & Issues
