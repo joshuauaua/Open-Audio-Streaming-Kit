@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HLS-Tool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95277742d7337f1e514c13ef3624b44a7ad0de97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32509d2692b0331386310d49994e822578e58d96")]
 [assembly: System.Reflection.AssemblyProductAttribute("HLS-Tool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HLS-Tool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
