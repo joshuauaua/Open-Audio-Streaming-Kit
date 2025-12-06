@@ -72,7 +72,6 @@ namespace Hyper_Radio_API.Services.TrackServices
             {
                 existingTrack.TrackURL = track.TrackURL;
             }
-            
 
             _trackRepository.UpdateTrack(existingTrack);
             return await _trackRepository.SaveChangesAsync();

@@ -15,15 +15,15 @@ namespace Hyper_Radio_API
 
             // Add services to the container.
             builder.Services.AddDbContext<HLSToolDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseSqlite(connectionString));
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
 
-            builder.Services.AddScoped<IUploadService, UploadService>();
+            builder.Services.AddScoped<ITrackService, TrackService>();
 
             
-            builder.Services.Configure<AzureBlobSettings>(
+            builder.Services.Configure<BlobSettings>(
                 builder.Configuration.GetSection("AzureBlob"));
             builder.Services.AddSingleton<BlobService>();
             builder.Services.AddSingleton<HlsConverterService>();
@@ -54,6 +54,8 @@ namespace Hyper_Radio_API
 
             var app = builder.Build();
 
+            
+            
             app.UseHttpsRedirection();
             app.UseCors("AllowFrontend");
 
