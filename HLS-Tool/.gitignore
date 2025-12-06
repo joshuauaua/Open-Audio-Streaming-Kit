@@ -1,0 +1,32 @@
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Build output
+bin/
+obj/
+**/obj/
+**/bin/
+**/net9.0/
+*.dll
+*.exe
+*.pdb
+*.cache/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+.nuget.info/
+*.gz
+
+# User-specific
+*.user
+*.userprefs
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
