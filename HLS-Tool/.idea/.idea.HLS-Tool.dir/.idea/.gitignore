@@ -1,0 +1,26 @@
+# Rider / IntelliJ
+.idea/
+*.sln.iml
+
+# Build output
+bin/
+obj/
+*.dll
+*.exe
+*.tmp
+*.log
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+.nuget.info/
+*.gz
+
+# Rider caches
+.cache/
+.rider/
+
+# User-specific
+*.user
+*.userprefs
