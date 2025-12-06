@@ -1,4 +1,5 @@
 using Hyper_Radio_API.Data;
+using Hyper_Radio_API.Repositories.TrackRepositories;
 using Hyper_Radio_API.Services.TrackServices;
 using Hyper_Radio_API.Services.UploadServices;
 using Microsoft.EntityFrameworkCore;
@@ -13,55 +14,59 @@ namespace Hyper_Radio_API
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            // Add services to the container.
+            // Database
             builder.Services.AddDbContext<HLSToolDbContext>(options =>
                 options.UseSqlite(connectionString));
 
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
+            // MVC with views (required for starting on Home/Index)
+            builder.Services.AddControllersWithViews();
 
+            // Dependency Injection services
             builder.Services.AddScoped<ITrackService, TrackService>();
-
-            
-            builder.Services.Configure<BlobSettings>(
-                builder.Configuration.GetSection("AzureBlob"));
+            builder.Services.AddScoped<ITrackRepository, TrackRepository>(); // <-- missing one!
+            builder.Services.Configure<BlobSettings>(builder.Configuration.GetSection("AzureBlob"));
             builder.Services.AddSingleton<BlobService>();
             builder.Services.AddSingleton<HlsConverterService>();
-            
-            
-            // Add CORS
+
+            // CORS configuration
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowSwaggerUI", policy =>
+                options.AddPolicy("AllowFrontend", policy =>
                 {
-                    policy.AllowAnyOrigin()    // or specify origins
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                    policy.WithOrigins(
+                        "https://localhost:7110",
+                        "http://localhost:5122",
+                        "hyper-radio-streamer-gqeaffc3cucfhxb8.norwayeast-01.azurewebsites.net"
+                    )
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
                 });
-                options.AddPolicy("AllowFrontend",
-                  policy =>
-                  {
-                      policy
-                          .WithOrigins("https://localhost:7110",
-                                       "http://localhost:5122",
-                                       "hyper-radio-streamer-gqeaffc3cucfhxb8.norwayeast-01.azurewebsites.net")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod()
-                          .AllowCredentials(); // optional, if cookies or auth are used
-                  });
             });
-
 
             var app = builder.Build();
 
-            
-            
-            app.UseHttpsRedirection();
-            app.UseCors("AllowFrontend");
+            // Middleware
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();        // required for CSS/JS/wwwroot
+            app.UseRouting();
+            app.UseCors("AllowFrontend");
             app.UseAuthorization();
-            
-            app.MapControllers();
+
+            // 👉 Default route = Home/Index
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            // Optional if you also want API endpoints using attribute routing
+            // app.MapControllers();
+
             app.Run();
         }
     }
