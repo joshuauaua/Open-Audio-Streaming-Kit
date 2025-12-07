@@ -7,27 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/HLS_Tool.styles.css" asp-append-version="true"/>
-
-    <style>
-        footer {
-            background: #0e0e0e;
-            color: #cfcfcf;
-            padding: 2rem 0;
-        }
-        footer a {
-            color: #9fcdff;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm mb-4">
+    <nav class="navbar navbar-expand-sm border-bottom shadow-sm mb-4">
         <div class="container">
 
             <!-- Logo / Brand -->
@@ -56,7 +41,6 @@
     </nav>
 </header>
 
-
 <div class="container pb-5">
     <main role="main" class="pb-5">
         @RenderBody()
@@ -64,10 +48,9 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer class="mt-auto py-4 border-top">
     <div class="container text-center">
-
-        <h5 class="fw-bold mb-3" style="color:white;">HLS Tool</h5>
+        <h5 class="fw-bold mb-3">HLS Tool</h5>
         <p>A project by <a href="https://www.sonicassembly.se" target="_blank">Sonic Assembly</a>, Stockholm.</p>
 
         <div class="mb-3">
@@ -80,6 +63,8 @@
     </div>
 </footer>
 
+<!-- Dark mode toggle -->
+<button id="themeToggle" class="theme-toggle-btn">🌙 Dark Mode</button>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

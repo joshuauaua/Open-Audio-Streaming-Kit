@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// Apply saved theme on load
+document.addEventListener("DOMContentLoaded", function () {
+    const isDark = localStorage.getItem("theme") === "dark";
+    if (isDark) document.body.classList.add("dark-theme");
 
-// Write your JavaScript code.
+    const toggleBtn = document.getElementById("themeToggle");
+    if (!toggleBtn) return;
+
+    toggleBtn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+    toggleBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-theme");
+
+        const nowDark = document.body.classList.contains("dark-theme");
+        localStorage.setItem("theme", nowDark ? "dark" : "light");
+
+        toggleBtn.textContent = nowDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    });
+});

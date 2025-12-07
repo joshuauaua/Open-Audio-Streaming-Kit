@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,24 +9,110 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+main {
+  flex: 1;
+}
+
+/* Focus outline for accessibility */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus,
+.form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+/* Form placeholders */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/* Default Light Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111;
+  --nav-bg: #ffffff;
+  --nav-text: #111;
+  --footer-bg: #ffffff;
+  --border-color: #ccc;
+  --card-bg: #f8f8f8;
+}
+
+/* Dark Mode */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #e6e6e6;
+  --nav-bg: #121212;
+  --nav-text: #e6e6e6;
+  --footer-bg: #121212;
+  --border-color: #444;
+  --card-bg: #242424;
+}
+
+/* Apply variables */
+.navbar, header {
+  background: var(--nav-bg) !important;
+  color: var(--nav-text) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+footer {
+  background: var(--footer-bg);
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+}
+
+footer a {
+  color: #9fcdff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.card, .container, main {
+  background: var(--card-bg);
+}
+
+/* Dark mode toggle button */
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+/* Light mode toggle button */
+body:not(.dark-theme) .theme-toggle-btn {
+  background-color: #f1f1f1;
+  color: #111;
 }
