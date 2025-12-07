@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("themeToggle");
     if (!toggleBtn) return;
 
-    const darkIcon = "/img/darkmode.svg";
-    const lightIcon = "/img/lightmode.svg";
+    const darkIcon = "/darkmode.svg";
+    const lightIcon = "/lightmode.svg";
 
     // Create an img element inside the button
     let icon = document.createElement("img");
