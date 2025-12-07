@@ -1,6 +1,6 @@
-# 🎧 HLS-Tool
+# 🎧 Open Audio Streaming Kit
 
-**HLS-Tool** is an open-source utility for developers working with media applications — especially audio streaming.  
+**Open Audio Streaming Kit** is an open-source utility for developers working with media applications — especially audio streaming.  
 It provides two key under-the-hood processes commonly required in audio streaming services:
 
 1. **HLS Conversion using FFmpeg**  
