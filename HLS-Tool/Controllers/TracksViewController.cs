@@ -24,7 +24,7 @@ namespace HLS_Tool.Controllers
             _logger = logger;
         }
 
-        // GET: /TracksView
+        // GET: / TracksView
         public async Task<IActionResult> Index()
         {
             var tracks = await _trackService.GetAllTracksAsync();
