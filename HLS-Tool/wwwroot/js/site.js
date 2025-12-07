@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let icon = document.createElement("img");
     icon.src = darkIcon; // default
     icon.alt = "Toggle Theme";
-    icon.style.height = "24px";
-    icon.style.width = "24px";
+    icon.style.height = "28px";
+    icon.style.width = "28px";
     toggleBtn.innerHTML = ""; // clear any content
     toggleBtn.appendChild(icon);
 
