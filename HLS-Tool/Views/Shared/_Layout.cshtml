@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - HLS Tool</title>
+    <title>@ViewData["Title"] - Open Audio Streaming Kit</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/HLS_Tool.styles.css" asp-append-version="true"/>
@@ -18,7 +18,7 @@
             <!-- Logo / Brand -->
             <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
                 <img src="~/img/logo.png" alt="HLS Tool" style="height:30px; margin-right:8px;">
-                HLS Tool
+                Open Audio Streaming Kit
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -50,7 +50,7 @@
 <!-- FOOTER -->
 <footer class="mt-auto py-4 border-top">
     <div class="container text-center">
-        <h5 class="fw-bold mb-3">HLS Tool</h5>
+        <h5 class="fw-bold mb-3">Open Audio Streaming Kit</h5>
         <p>A project by <a href="https://www.sonicassembly.se" target="_blank">Sonic Assembly</a>, Stockholm.</p>
 
         <div class="mb-3">
@@ -64,7 +64,10 @@
 </footer>
 
 <!-- Dark mode toggle -->
-<button id="themeToggle" class="theme-toggle-btn">🌙 Dark Mode</button>
+<button id="themeToggle" class="theme-toggle-btn">
+    <img src="~/img/darkmode.svg" alt="Toggle Dark Mode" style="height:24px; width:24px;">
+</button>
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
